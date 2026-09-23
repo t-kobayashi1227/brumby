@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #eef1f6;
+  --color-ink: #16233f;
+  --color-night: #0f1b30;
+  --color-brand: #1f3a63;
+  --color-body: #4a5468;
+  --color-sub: #5a6480;
+  --color-muted: #8a93a6;
+  --color-line: #e2e6ee;
+  --color-field: #d8dce6;
+  --color-divider: #f3f5f9;
+  --color-subtle: #f7f9fc;
+  --color-accent: #c14b1f;
+  --color-chart: #8fb4e0;
+}
+
+@theme inline {
+  --font-sans: var(--font-noto-sans-jp), "Noto Sans JP", sans-serif;
+}
+
+/* Diagonal-stripe placeholder for photos, maps and previews. */
+@utility bg-stripes {
+  background-image: repeating-linear-gradient(135deg, #eef1f6, #eef1f6 10px, #e2e6ee 10px, #e2e6ee 20px);
+}
