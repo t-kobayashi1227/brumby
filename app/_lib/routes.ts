@@ -39,7 +39,7 @@ export const navItems: { label: string; href: string }[] = [
   { label: "モニターダッシュボード", href: "/monitor" },
   { label: "レポート", href: "/report" },
   { label: "お知らせ", href: "/notice" },
-  { label: "設定", href: "/plan" },
+  { label: "プラン・オプション", href: "/plan" },
 ];
 
 /** A nav item is active on its own page and on any page nested under it. */

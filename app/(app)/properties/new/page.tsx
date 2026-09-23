@@ -10,6 +10,21 @@ const LAST_STEP = regStepDefs.length;
 export default function NewPropertyPage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
+  const [form, setForm] = useState({
+    name: "中央区上近江 新築戸建",
+    type: "新築戸建",
+    price: "3,780",
+    address: "新潟市中央区上近江1丁目",
+    landArea: "180.25",
+    buildingArea: "105.98",
+    parking: "2",
+    access: "JR上所駅 徒歩12分",
+    layout: "4LDK",
+    age: "2025年6月（新築）",
+  });
+
+  const update = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const back = () => (step > 1 ? setStep(step - 1) : router.push("/dashboard"));
   const next = () => setStep(Math.min(LAST_STEP, step + 1));
@@ -24,19 +39,19 @@ export default function NewPropertyPage() {
           </div>
         ))}
       </div>
-      <div className={`${card} p-6 max-w-[640px]`}>
+      <div className={`${card} p-6`}>
         {step === 1 && (
           <>
             <div className="text-[15px] font-bold text-ink mb-4">基本情報</div>
             <div className="grid gap-3.5">
               <div>
                 <label className={fieldLabel}>物件名</label>
-                <input defaultValue="中央区上近江 新築戸建" className={input} />
+                <input value={form.name} onChange={update("name")} className={input} />
               </div>
               <div className="grid grid-cols-2 gap-3.5">
                 <div>
                   <label className={fieldLabel}>物件種別</label>
-                  <select className={input}>
+                  <select value={form.type} onChange={update("type")} className={input}>
                     <option>新築戸建</option>
                     <option>中古戸建</option>
                     <option>土地</option>
@@ -44,16 +59,30 @@ export default function NewPropertyPage() {
                 </div>
                 <div>
                   <label className={fieldLabel}>販売価格（万円）</label>
-                  <input defaultValue="3,780" className={input} />
+                  <input value={form.price} onChange={update("price")} className={input} />
                 </div>
               </div>
               <div>
                 <label className={fieldLabel}>所在地</label>
-                <input defaultValue="新潟市中央区上近江1丁目" className={input} />
+                <input value={form.address} onChange={update("address")} className={input} />
+              </div>
+              <div className="grid grid-cols-3 gap-3.5">
+                <div>
+                  <label className={fieldLabel}>土地面積（㎡）</label>
+                  <input value={form.landArea} onChange={update("landArea")} className={input} />
+                </div>
+                <div>
+                  <label className={fieldLabel}>建物面積（㎡）</label>
+                  <input value={form.buildingArea} onChange={update("buildingArea")} className={input} />
+                </div>
+                <div>
+                  <label className={fieldLabel}>駐車場台数</label>
+                  <input value={form.parking} onChange={update("parking")} className={input} />
+                </div>
               </div>
               <div>
                 <label className={fieldLabel}>交通</label>
-                <input defaultValue="JR上所駅 徒歩12分" className={input} />
+                <input value={form.access} onChange={update("access")} className={input} />
               </div>
             </div>
           </>
@@ -65,11 +94,11 @@ export default function NewPropertyPage() {
               <div className="grid grid-cols-2 gap-3.5">
                 <div>
                   <label className={fieldLabel}>間取り</label>
-                  <input defaultValue="4LDK" className={input} />
+                  <input value={form.layout} onChange={update("layout")} className={input} />
                 </div>
                 <div>
                   <label className={fieldLabel}>築年数</label>
-                  <input defaultValue="2025年6月（新築）" className={input} />
+                  <input value={form.age} onChange={update("age")} className={input} />
                 </div>
               </div>
               <div>
@@ -110,13 +139,25 @@ export default function NewPropertyPage() {
           <>
             <div className="text-[15px] font-bold text-ink mb-4">確認</div>
             <div className="text-[13px] text-body leading-[1.9]">
-              物件名：中央区上近江 新築戸建
+              物件名：{form.name}
               <br />
-              販売価格：3,780万円
+              物件種別：{form.type}
               <br />
-              所在地：新潟市中央区上近江1丁目
+              販売価格：{form.price}万円
               <br />
-              間取り：4LDK
+              所在地：{form.address}
+              <br />
+              土地面積：{form.landArea}㎡
+              <br />
+              建物面積：{form.buildingArea}㎡
+              <br />
+              駐車場台数：{form.parking}台
+              <br />
+              交通：{form.access}
+              <br />
+              間取り：{form.layout}
+              <br />
+              築年数：{form.age}
             </div>
           </>
         )}

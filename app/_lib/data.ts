@@ -8,7 +8,6 @@ export interface PropertyItem {
   inquiries: number;
   tours: number;
   status: PropertyStatus;
-  nextCheck: string;
 }
 
 export interface CompetitorItem {
@@ -26,11 +25,11 @@ export type MediaBudget = "10" | "20" | "30";
 // ---- static mock data ----
 
 export const properties: PropertyItem[] = [
-  { name: "中央区上近江 新築戸建", price: "3,780万円", days: 45, views: 386, inquiries: 8, tours: 3, status: "注意", nextCheck: "9/30" },
-  { name: "西区寺尾東 中古戸建", price: "2,480万円", days: 68, views: 210, inquiries: 2, tours: 0, status: "要改善", nextCheck: "9/28" },
-  { name: "江南区亀田 新築戸建", price: "3,280万円", days: 25, views: 420, inquiries: 9, tours: 4, status: "順調", nextCheck: "9/27" },
-  { name: "東区はなみずき 土地", price: "1,980万円", days: 51, views: 168, inquiries: 3, tours: 1, status: "注意", nextCheck: "9/29" },
-  { name: "秋葉区新津 新築戸建", price: "2,980万円", days: 72, views: 134, inquiries: 1, tours: 0, status: "要改善", nextCheck: "9/30" },
+  { name: "中央区上近江 新築戸建", price: "3,780万円", days: 45, views: 386, inquiries: 8, tours: 3, status: "注意" },
+  { name: "西区寺尾東 中古戸建", price: "2,480万円", days: 68, views: 210, inquiries: 2, tours: 0, status: "要改善" },
+  { name: "江南区亀田 新築戸建", price: "3,280万円", days: 25, views: 420, inquiries: 9, tours: 4, status: "順調" },
+  { name: "東区はなみずき 土地", price: "1,980万円", days: 51, views: 168, inquiries: 3, tours: 1, status: "注意" },
+  { name: "秋葉区新津 新築戸建", price: "2,980万円", days: 72, views: 134, inquiries: 1, tours: 0, status: "要改善" },
 ];
 
 export const compData: CompetitorItem[] = [
