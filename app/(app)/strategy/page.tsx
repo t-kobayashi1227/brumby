@@ -25,50 +25,56 @@ export default function StrategyPage() {
       <UnderlineTabs tabs={strategyTabDefs} active={tab} onChange={setTab} />
 
       {tab === "overall" && (
-        <div className={`${card} p-5.5`}>
-          <div className="text-[13px] text-muted mb-3">この物件の総合評価</div>
-          <div className="flex gap-4.5 items-start">
-            <div className="size-14 shrink-0 border-2 border-accent rounded-lg flex items-center justify-center text-[28px] font-black text-accent">A</div>
-            <div>
-              <div className="text-base font-extrabold text-accent mb-2">子育てファミリー層を中心に、早期売却が期待できる物件です。</div>
-              <div className="text-[13px] text-body leading-[1.9]">周辺の人口構成・競合状況・価格相場を総合的に分析した結果、人気の高いエリアであり、価格・立地・住環境のバランスが良く、高い訴求力を持つ物件です。</div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {tab === "target" && (
-        <div className="grid gap-3">
-          {targetList.map((t) => (
-            <div key={t.num} className={`${card} p-4.5 flex gap-4 items-start`}>
-              <div className="size-8 shrink-0 rounded-full bg-brand text-white font-extrabold text-sm flex items-center justify-center">{t.num}</div>
-              <div className="flex-1">
-                <div className="text-sm font-extrabold text-ink mb-2">{t.title}</div>
-                <div className="text-[13px] text-body leading-[1.8]">{t.desc}</div>
+        <div className="grid gap-4">
+          <div className={`${card} p-5.5`}>
+            <div className="text-[13px] text-muted mb-3">この物件の総合評価</div>
+            <div className="flex gap-4.5 items-start">
+              <div className="size-14 shrink-0 border-2 border-accent rounded-lg flex items-center justify-center text-[28px] font-black text-accent">A</div>
+              <div>
+                <div className="text-base font-extrabold text-accent mb-2">子育てファミリー層を中心に、早期売却が期待できる物件です。</div>
+                <div className="text-[13px] text-body leading-[1.9]">周辺の人口構成・競合状況・価格相場を総合的に分析した結果、人気の高いエリアであり、価格・立地・住環境のバランスが良く、高い訴求力を持つ物件です。</div>
               </div>
             </div>
-          ))}
-        </div>
-      )}
-
-      {tab === "appeal" && (
-        <div className={`${card} p-5`}>
-          <div className="text-[13px] font-bold text-ink mb-3.5">主な訴求ポイント</div>
-          <div className="grid gap-2.5">
-            {appealList.map((a, i) => (
-              <div key={i} className={fieldLabel}>✓ {a}</div>
-            ))}
           </div>
-        </div>
-      )}
 
-      {tab === "direction" && (
-        <div className={`${card} p-5`}>
-          <div className="text-[13px] font-bold text-ink mb-3.5">販売の方向性</div>
-          <div className="grid gap-2.5">
-            {directionList.map((d, i) => (
-              <div key={i} className={fieldLabel}>✓ {d}</div>
-            ))}
+          <div className={`${card} p-5`}>
+            <div className="text-[13px] font-bold text-ink mb-3.5">ターゲット</div>
+            <div className="grid grid-cols-3 gap-3">
+              {targetList.map((t) => (
+                <div key={t.num} className="bg-subtle rounded-lg p-4">
+                  <div className="flex gap-2.5 items-center mb-2">
+                    <div className="size-7 shrink-0 rounded-full bg-brand text-white font-extrabold text-[13px] flex items-center justify-center">{t.num}</div>
+                    <div className="text-[13px] font-extrabold text-ink">{t.title}</div>
+                  </div>
+                  <ul className="grid gap-1 text-xs text-body leading-[1.8]">
+                    {t.desc.map((d) => (
+                      <li key={d} className="flex gap-1">
+                        <span className="shrink-0">・</span>
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={`${card} p-5`}>
+            <div className="text-[13px] font-bold text-ink mb-3.5">訴求ポイント</div>
+            <div className="grid gap-2.5">
+              {appealList.map((a) => (
+                <div key={a} className={fieldLabel}>✓ {a}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className={`${card} p-5`}>
+            <div className="text-[13px] font-bold text-ink mb-3.5">販売の方向性</div>
+            <div className="grid gap-2.5">
+              {directionList.map((d) => (
+                <div key={d} className={fieldLabel}>✓ {d}</div>
+              ))}
+            </div>
           </div>
         </div>
       )}

@@ -39,7 +39,7 @@ export default function DashboardPage() {
       </div>
       <div className={`${card} p-5`}>
         <div className="flex justify-between items-center mb-3.5">
-          <div className="text-[15px] font-bold text-ink">販売中物件の状況</div>
+          <div className="text-lg font-bold text-ink">販売中物件の状況</div>
           <div className="relative">
             <button
               type="button"
@@ -47,7 +47,7 @@ export default function DashboardPage() {
               className="flex items-center gap-1.5 py-1.5 px-3.5 bg-white border border-field rounded-full text-[13px] text-body cursor-pointer"
             >
               {currentLabel}
-              <span className="text-[10px] text-muted">▼</span>
+              <span className="text-[10px]">▼</span>
             </button>
             {open && (
               <>
@@ -86,17 +86,17 @@ export default function DashboardPage() {
             className="grid grid-cols-[2.4fr_1fr_1fr_1fr_1fr] gap-2 py-3 px-1 border-b border-divider items-center"
           >
             <div className="flex items-center gap-3">
-              <div className="relative w-14 h-14 rounded-md shrink-0 overflow-hidden">
+              <div className="relative w-15 h-15 rounded-md shrink-0 overflow-hidden">
                 <Image src="/house.jpg" alt={p.name} fill sizes="56px" style={{ objectFit: "cover" }} />
               </div>
               <div>
-                <div className="text-[13px] text-ink font-semibold">{p.name}</div>
-                <div className="text-[13px] text-ink mt-0.5">{p.price}</div>
+                <div className="text-base font-semibold">{p.name}</div>
+                <div className="text-sm mt-0.5">{p.price}</div>
               </div>
             </div>
-            <div className="text-[13px] text-sub">{p.days}日</div>
-            <div className="text-[13px] text-sub">{p.inquiries}</div>
-            <div className="text-[13px] text-sub">{p.tours}</div>
+            <div className="text-base">{p.days}日</div>
+            <div className="text-base">{p.inquiries}</div>
+            <div className="text-base">{p.tours}</div>
             <div>
               <StatusBadge status={p.status} />
             </div>

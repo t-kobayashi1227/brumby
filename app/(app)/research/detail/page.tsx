@@ -42,6 +42,20 @@ export default function ResearchDetailPage() {
             <label className={fieldLabel}>間取り</label>
             <input defaultValue={activeComp.layout} className={input} />
           </div>
+          <div className="grid grid-cols-2 gap-2.5">
+            <div>
+              <label className={fieldLabel}>駅徒歩（分）</label>
+              <input defaultValue={activeComp.walk} className={input} />
+            </div>
+            <div>
+              <label className={fieldLabel}>駐車場（台）</label>
+              <input defaultValue={activeComp.parking} className={input} />
+            </div>
+          </div>
+          <div>
+            <label className={fieldLabel}>特徴</label>
+            <textarea defaultValue={activeComp.features} rows={3} className={`${input} resize-none`} />
+          </div>
         </div>
         <div className={`${stripePlaceholder} aspect-[4/3] rounded-lg text-[11px] h-fit`}>競合物件写真</div>
       </div>

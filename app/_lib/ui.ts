@@ -14,7 +14,7 @@ export const btnPrimary = "px-5 py-2.5 bg-brand rounded-md text-white text-[13px
 
 export const btnSecondary = "px-5 py-2.5 bg-white border border-field rounded-md text-body text-[13px] cursor-pointer";
 
-export const tableHead = "grid gap-2 text-sm px-1 pb-2 border-b border-canvas";
+export const tableHead = "grid gap-2 text-base px-1 pb-2 border-b border-canvas";
 
 export const statBox = "bg-subtle rounded-lg";
 
@@ -31,7 +31,7 @@ const statusClasses: Record<PropertyStatus, string> = {
 };
 
 export function badgeClass(status: PropertyStatus): string {
-  return `inline-block px-2.5 py-1 rounded-full text-xs font-bold ${statusClasses[status] ?? ""}`;
+  return `inline-block px-2.5 py-1 rounded-full text-sm font-bold ${statusClasses[status] ?? ""}`;
 }
 
 const statusPillActiveClasses: Record<PropertyStatus, string> = {

@@ -15,7 +15,7 @@ export const pages: PageDef[] = [
   { href: "/research/detail", title: "6. 競合物件リサーチ（詳細入力）" },
   { href: "/research/result", title: "7. AI分析結果（競合診断）" },
   { href: "/strategy", title: "8. 販売戦略提案" },
-  { href: "/monitor", title: "9. モニターダッシュボード" },
+  { href: "/monitor", title: "9. ダッシュボード" },
   { href: "/monitor/0", title: "10. 物件別モニター詳細" },
   { href: "/report", title: "11. レポート出力" },
   { href: "/plan", title: "12. プラン・オプション" },
@@ -36,7 +36,7 @@ export const navItems: { label: string; href: string }[] = [
   { label: "新規物件登録", href: "/properties/new" },
   { label: "販売戦略", href: "/strategy" },
   { label: "競合物件リサーチ", href: "/research" },
-  { label: "モニターダッシュボード", href: "/monitor" },
+  { label: "ダッシュボード", href: "/monitor" },
   { label: "レポート", href: "/report" },
   { label: "お知らせ", href: "/notice" },
   { label: "プラン・オプション", href: "/plan" },
@@ -49,6 +49,7 @@ export function isNavActive(href: string, pathname: string): boolean {
 
 export const researchSteps: { num: number; label: string; hrefs: string[] }[] = [
   { num: 1, label: "検索条件の確認", hrefs: ["/research"] },
-  { num: 2, label: "検索・入力", hrefs: ["/research/input", "/research/detail"] },
-  { num: 3, label: "AI分析", hrefs: ["/research/result"] },
+  { num: 2, label: "検索・入力", hrefs: ["/research/input"] },
+  { num: 3, label: "競合物件", hrefs: ["/research/detail"] },
+  { num: 4, label: "AI分析", hrefs: ["/research/result"] },
 ];
